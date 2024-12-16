@@ -45,7 +45,7 @@ function start(barOptions, barOptions2) {
 	var tl = init();
 
 	tl.add("start");
-	var barTL = barOptions.verHor === "h" ? animate_bars_vertical(barOptions) : animate_bars_horizontal(barOptions);
+	var barTL = barOptions.verHor === "h" ? animate_bars_vertical(barOptions, false) : animate_bars_horizontal(barOptions);
 
 	tl.add(barTL, "start");
 
@@ -56,8 +56,6 @@ function start(barOptions, barOptions2) {
 	tl.add(barTL2, "end");
 
 	tl.from('.t2', stag(vh), "end+=.3");
-
-	// return
 
 	tl.to(".t2", { duration: .3, y: 0, scale: .5, x: 0, top: 0, left: 0 }, "+=" + READ.t2);
 
@@ -108,6 +106,7 @@ function animate_bars_horizontal(barOptions) {
 }
 
 function animate_bars_vertical(barOptions) {
+	var animate = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
 	var TOTAL = barOptions.TOTAL;
 	var WIDTH = barOptions.WIDTH;
 	var HEIGHT = barOptions.HEIGHT;
@@ -131,11 +130,13 @@ function animate_bars_vertical(barOptions) {
 	}
 
 	var tl = new TimelineMax();
+	if (animate) {
+		tl.from("#" + id + " .bar", {
+			width: 0,
+			stagger: 0.06
+		});
+	}
 
-	tl.from("#" + id + " .bar", {
-		width: 0,
-		stagger: 0.06
-	});
 	return tl;
 }
 
@@ -167,18 +168,33 @@ function olg() {
 exports.olg = olg;
 
 },{}],3:[function(require,module,exports){
-'use strict';
+"use strict";
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
+var colors = ["2ed145", "46d442", "5eda40", "76de3d", "8de23b", "a4e739", "bbeb37", "d3ef35"];
+
 var barOptions = {
-	TOTAL: 12,
-	WIDTH: 276,
-	HEIGHT: 14,
-	GAP: 20
+	colors: colors,
+	verHor: "h",
+	TOTAL: 8,
+	WIDTH: 50,
+	HEIGHT: 20,
+	GAP: -50,
+	id: "bars"
+
 };
 
-(0, _commonJsCommonJs.start)(barOptions);
+var barOptions2 = _extends({}, barOptions, {
+	colors: colors.reverse(),
+	GAP: 50,
+	WIDTH: 370,
+	id: "bars2"
+});
+
+(0, _commonJsCommonJs.start)(barOptions, barOptions2);
 
 module.exports = {};
 

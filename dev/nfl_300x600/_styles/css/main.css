@@ -271,50 +271,34 @@ canvas, .text, .frame, .outline, img {
 }
 
 #bars {
-  -webkit-transform: translate(12px, 391px);
-  -ms-transform: translate(12px, 391px);
-  transform: translate(12px, 391px);
+  -webkit-transform: translate(0px, 382px);
+  -ms-transform: translate(0px, 382px);
+  transform: translate(0px, 382px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  position: relative;
-  z-index: 0;
-  height: 200px;
 }
 
-#bars .bar {
-  padding: 0;
-  margin: 0;
-  position: absolute;
+#bars .bar_7 {
+  height: 80px !important;
 }
 
-.logos {
-  z-index: 1;
-}
-
-.hero {
-  -webkit-transform: translate(12px, 146px);
-  -ms-transform: translate(12px, 146px);
-  transform: translate(12px, 146px);
+#bars2 {
+  -webkit-transform: translate(0px, 136px);
+  -ms-transform: translate(0px, 136px);
+  transform: translate(0px, 136px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  width: 276px;
-  height: 245px;
-  overflow: hidden;
 }
 
-.hero .image {
-  -webkit-transform-origin: 25% 25%;
-  -ms-transform-origin: 25% 25%;
-  transform-origin: 25% 25%;
-  -webkit-transform: scale(0.8) translate(-134px, -100px);
-  -ms-transform: scale(0.8) translate(-134px, -100px);
-  transform: scale(0.8) translate(-134px, -100px);
+#bars2 .bar_0 {
+  height: 160px !important;
+  top: -140px;
 }
 
 /*# sourceMappingURL=main.css.map */

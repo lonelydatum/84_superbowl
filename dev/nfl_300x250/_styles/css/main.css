@@ -298,4 +298,20 @@ canvas, .text, .frame, .outline, img {
   height: 30px !important;
 }
 
+#bars2 {
+  -webkit-transform: translate(0px, 22px);
+  -ms-transform: translate(0px, 22px);
+  transform: translate(0px, 22px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+#bars2 .bar_0 {
+  height: 36px !important;
+  top: -22px;
+}
+
 /*# sourceMappingURL=main.css.map */

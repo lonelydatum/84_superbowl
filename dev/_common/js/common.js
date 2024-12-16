@@ -36,7 +36,7 @@ function start(barOptions, barOptions2, vh={x:-size.w}){
 	const tl = init()
 	
 	tl.add("start")
-	const barTL = barOptions.verHor==="h" ? animate_bars_vertical(barOptions) : animate_bars_horizontal(barOptions)
+	const barTL = barOptions.verHor==="h" ? animate_bars_vertical(barOptions, false) : animate_bars_horizontal(barOptions)
 
 	tl.add(barTL, "start")
 	
@@ -62,7 +62,7 @@ function start(barOptions, barOptions2, vh={x:-size.w}){
 
 
 
-	// return
+	
 	
 	
 	tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)
@@ -123,7 +123,7 @@ function animate_bars_horizontal(barOptions){
 
 }
 
-function animate_bars_vertical(barOptions){
+function animate_bars_vertical(barOptions, animate=true){
 	const {
 		TOTAL,
 		WIDTH,
@@ -150,11 +150,13 @@ function animate_bars_vertical(barOptions){
 	}
 
 	const tl = new TimelineMax()
-
-	tl.from(`#${id} .bar`, {
-		width: 0,
-		stagger: 0.06
-	});
+	if(animate){
+		tl.from(`#${id} .bar`, {
+			width: 0,
+			stagger: 0.06
+		});	
+	}
+	
 	return tl
 
 

@@ -31,6 +31,12 @@ const barOptions  ={
 
 const barOptions2  ={
 	...barOptions,
+	colors: colors.reverse(),
+	WIDTH: 350+50,
+	HEIGHT: 13,
+	TOTAL: 8,
+	GAP:50,
+	id:"bars2",
 }
 
 

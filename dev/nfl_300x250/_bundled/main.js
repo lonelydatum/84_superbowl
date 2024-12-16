@@ -45,7 +45,7 @@ function start(barOptions, barOptions2) {
 	var tl = init();
 
 	tl.add("start");
-	var barTL = barOptions.verHor === "h" ? animate_bars_vertical(barOptions) : animate_bars_horizontal(barOptions);
+	var barTL = barOptions.verHor === "h" ? animate_bars_vertical(barOptions, false) : animate_bars_horizontal(barOptions);
 
 	tl.add(barTL, "start");
 
@@ -56,8 +56,6 @@ function start(barOptions, barOptions2) {
 	tl.add(barTL2, "end");
 
 	tl.from('.t2', stag(vh), "end+=.3");
-
-	// return
 
 	tl.to(".t2", { duration: .3, y: 0, scale: .5, x: 0, top: 0, left: 0 }, "+=" + READ.t2);
 
@@ -108,6 +106,7 @@ function animate_bars_horizontal(barOptions) {
 }
 
 function animate_bars_vertical(barOptions) {
+	var animate = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
 	var TOTAL = barOptions.TOTAL;
 	var WIDTH = barOptions.WIDTH;
 	var HEIGHT = barOptions.HEIGHT;
@@ -131,11 +130,13 @@ function animate_bars_vertical(barOptions) {
 	}
 
 	var tl = new TimelineMax();
+	if (animate) {
+		tl.from("#" + id + " .bar", {
+			width: 0,
+			stagger: 0.06
+		});
+	}
 
-	tl.from("#" + id + " .bar", {
-		width: 0,
-		stagger: 0.06
-	});
 	return tl;
 }
 
@@ -186,7 +187,14 @@ var barOptions = {
 
 };
 
-var barOptions2 = _extends({}, barOptions);
+var barOptions2 = _extends({}, barOptions, {
+	colors: colors.reverse(),
+	WIDTH: 350 + 50,
+	HEIGHT: 13,
+	TOTAL: 8,
+	GAP: 50,
+	id: "bars2"
+});
 
 (0, _commonJsCommonJs.start)(barOptions, barOptions2);
 

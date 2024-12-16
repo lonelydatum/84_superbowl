@@ -35,3 +35,12 @@
 		height: 30px !important;
 	}
 }
+
+
+#bars2{
+	@include pos(0, 22);
+	.bar_0{
+		height: 36px !important;
+		top:-22px;
+	}
+}

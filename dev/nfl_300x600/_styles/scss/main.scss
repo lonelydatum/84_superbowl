@@ -25,34 +25,19 @@
 }
 
 
+
+
 #bars{
-	@include pos(12, 391);
-	position: relative;
-	z-index: 0;
-	// width: 300px;
-	height: 200px;
-	.bar{
-
-		padding: 0;
-		margin: 0;
-		position: absolute;
-
+	@include pos(0, 382);
+	.bar_7{
+		height: 80px !important;
 	}
 }
 
-.logos{
-	z-index: 1;
-}
-
-.hero{
-	@include pos(12, 146);
-	width: 276px;
-	height: 245px;
-	overflow: hidden;	
-	.image{
-		transform-origin: 25% 25%;		
-		transform: scale(.8) translate(-134px, -100px);	
-		// scale(0.8) translate(-134px, -100px
-		// opacity: .5;				
+#bars2{
+	@include pos(0, 136);
+	.bar_0{
+		height: 160px !important;
+		top:-140px;
 	}
 }
