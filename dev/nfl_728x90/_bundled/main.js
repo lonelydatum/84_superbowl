@@ -52,7 +52,7 @@ function start(barOptions, barOptions2) {
 	tl.add(barTL, "start");
 
 	tl.from('.t1', stag(vh), "start+=.3");
-	tl.to([".t1", "#bars", ".logos"], { duration: .3, opacity: 0 }, "+=" + READ.t1);
+	tl.to([".hero", ".t1", "#bars", ".logos"], { duration: .3, opacity: 0 }, "+=" + READ.t1);
 
 	var barTL2 = barOptions2.verHor === "h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2);
 	tl.add(barTL2, "end");

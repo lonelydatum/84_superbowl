@@ -62,7 +62,7 @@ function start(barOptions, barOptions2, vh={x:-size.w}){
 	
 	
 	tl.from('.t1', stag(vh), "start+=.3");	
-	tl.to([".t1", "#bars", ".logos"], {duration:.3, opacity:0}, `+=${READ.t1}`)
+	tl.to([".hero", ".t1", "#bars", ".logos"], {duration:.3, opacity:0}, `+=${READ.t1}`)
 	
 
 	

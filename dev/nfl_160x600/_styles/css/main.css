@@ -231,6 +231,7 @@ canvas, .text, .frame, .outline, img {
 #banner {
   width: 160px;
   height: 600px;
+  background-color: #00c849;
 }
 
 #olg {
