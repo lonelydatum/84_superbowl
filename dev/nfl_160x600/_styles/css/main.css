@@ -246,6 +246,17 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
+.t2 {
+  -webkit-transform: translate(0px, 66px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 66px) scale(0.5, 0.5);
+  transform: translate(0px, 66px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
 #legalBtn {
   -webkit-transform: translate(95px, 4px);
   -ms-transform: translate(95px, 4px);
@@ -259,9 +270,9 @@ canvas, .text, .frame, .outline, img {
 }
 
 #bars {
-  -webkit-transform: translate(10px, 415px);
-  -ms-transform: translate(10px, 415px);
-  transform: translate(10px, 415px);
+  -webkit-transform: translate(0px, 385px);
+  -ms-transform: translate(0px, 385px);
+  transform: translate(0px, 385px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -269,7 +280,6 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
   position: relative;
   z-index: 0;
-  height: 200px;
 }
 
 #bars .bar {
@@ -278,31 +288,32 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-.logos {
-  z-index: 1;
+#bars .bar_7 {
+  height: 75px !important;
 }
 
-.hero {
-  -webkit-transform: translate(10px, 198px);
-  -ms-transform: translate(10px, 198px);
-  transform: translate(10px, 198px);
+#bars2 {
+  -webkit-transform: translate(0px, 113px);
+  -ms-transform: translate(0px, 113px);
+  transform: translate(0px, 113px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  width: 143px;
-  height: 216px;
-  overflow: hidden;
+  position: relative;
+  z-index: 0;
 }
 
-.hero .image {
-  -webkit-transform-origin: 25% 25%;
-  -ms-transform-origin: 25% 25%;
-  transform-origin: 25% 25%;
-  -webkit-transform: scale(0.8) translate(-54px, -110px);
-  -ms-transform: scale(0.8) translate(-54px, -110px);
-  transform: scale(0.8) translate(-54px, -110px);
+#bars2 .bar {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+
+#bars2 .bar_0 {
+  height: 132px !important;
+  top: -112px;
 }
 
 /*# sourceMappingURL=main.css.map */

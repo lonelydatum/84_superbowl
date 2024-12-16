@@ -20,7 +20,7 @@ var w = size.w;
 var h = size.h;
 
 var READ = {
-	t1: 1.3,
+	t1: 2.7,
 	t2: 1.7,
 	t3: 2.1
 };
@@ -41,42 +41,27 @@ function stag(vh) {
 	return _extends({ duration: .3, opacity: 0, stagger: .1 }, vh);
 }
 
-function start(barOptions) {
-	var vh = arguments.length <= 1 || arguments[1] === undefined ? { x: -size.w } : arguments[1];
+function start(barOptions, barOptions2) {
+	var vh = arguments.length <= 2 || arguments[2] === undefined ? { x: -size.w } : arguments[2];
 
 	var tl = init();
 
-	var fun = barOptions.HEIGHT > barOptions.WIDTH ? animate_bars_horizontal : animate_bars_vertical;
-	fun(barOptions);
-	if (universalBanner.size === "300x250") {
-		TweenLite.to(".hero img", { duration: 3, scale: .55 });
-	} else {
-		TweenLite.from(".hero img", { duration: 3, scale: "-=.1" });
-	}
+	tl.add("start");
+	var barTL = barOptions.verHor === "h" ? animate_bars_vertical(barOptions) : animate_bars_horizontal(barOptions);
 
-	// return
-	console.log(stag(vh));
-	tl.from('.t1', stag(vh), "+=.4");
-	tl.to(".t1", { duration: .3, opacity: 0 }, "+=" + READ.t1);
+	tl.add(barTL, "start");
 
-	tl.from('.t2', stag(vh));
-	var listter = [".frame1"];
+	tl.from('.t1', stag(vh), "start+=.3");
+	tl.to([".t1", "#bars", ".logos"], { duration: .3, opacity: 0 }, "+=" + READ.t1);
 
-	if (universalBanner.size != "300x250" && universalBanner.size != "160x600") {
-		// console.log(universalBanner.size);
-		listter.push(".logos");
-	}
-	console.log(listter);
-	tl.to(listter, { duration: .3, opacity: 0 }, "+=" + READ.t2);
+	var barTL2 = barOptions2.verHor === "h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2);
+	tl.add(barTL2, "end");
 
-	tl.to(".frame2", { duration: .3, opacity: 1 }, "t2");
+	tl.from('.t2', stag(vh), "end+=.3");
 
-	tl.from('.t3', stag(vh));
+	tl.to(".t2", { duration: .3, y: 0 }, "+=" + READ.t2);
 
-	tl.to([".logos", ".t3"], { duration: .3, opacity: 0 }, "+=" + READ.t3);
-
-	tl.from(".t4", { duration: .3, opacity: 0 });
-	tl.from([".cta", ".legalBtn"], { duration: .3, opacity: 0 });
+	tl.from([".cta", ".legalBtn", ".logos_big"], { duration: .3, opacity: 0 });
 
 	tl.add((0, _proline.olg)());
 }
@@ -86,8 +71,12 @@ function animate_bars_horizontal(barOptions) {
 	var WIDTH = barOptions.WIDTH;
 	var HEIGHT = barOptions.HEIGHT;
 	var GAP = barOptions.GAP;
+	var id = barOptions.id;
 
-	var bars = document.getElementById("bars");
+	var bars = document.getElementById(id);
+	console.log(bars);
+
+	console.log(barOptions);
 
 	for (var i = 0; i < TOTAL; i++) {
 		var barItem = document.createElement("div");
@@ -121,8 +110,11 @@ function animate_bars_vertical(barOptions) {
 	var WIDTH = barOptions.WIDTH;
 	var HEIGHT = barOptions.HEIGHT;
 	var GAP = barOptions.GAP;
+	var id = barOptions.id;
 
-	var bars = document.getElementById("bars");
+	console.log(barOptions);
+
+	var bars = document.getElementById(id);
 
 	for (var i = 0; i < TOTAL; i++) {
 		var barItem = document.createElement("div");
@@ -139,7 +131,7 @@ function animate_bars_vertical(barOptions) {
 
 	var tl = new TimelineMax();
 
-	tl.from('.bar', {
+	tl.from("#" + id + " .bar", {
 		width: 0,
 		stagger: 0.06
 	});
