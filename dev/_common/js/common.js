@@ -24,22 +24,6 @@ function init(){
 	return tl
 }
 
-const colors = [
-	"d4f035", 
-	"c4ed37", 
-	"b3ea38", 
-	"a3e73a", 
-	"93e43b", 
-	"82e13d", 
-	"72de3e", 
-	"62da40", 
-	"52d741",
-	"41d443",
-	"31d144",
-	"21ce46",
-	"10cb47",
-	"00c849"
-	]
 
 
 function stag(vh){
@@ -78,12 +62,12 @@ function start(barOptions, barOptions2, vh={x:-size.w}){
 
 
 
+	// return
 	
 	
+	tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)
 	
-	tl.to(".t2", {duration:.3, y:0}, `+=${READ.t2}`)
-	
-	tl.from([".cta", ".legalBtn", ".logos_big"], {duration:.3, opacity:0})
+	tl.from([".cta", ".legalBtn", ".logos_big", ".playsmart"], {duration:.3, opacity:0})
 
 	tl.add(olg())
 
@@ -97,12 +81,14 @@ function animate_bars_horizontal(barOptions){
 		WIDTH,
 		HEIGHT,
 		GAP,
-		id
+		id,
+		colors,
+		startColor
 	} = barOptions  
 	
 
 	const bars = document.getElementById(id)
-	console.log(bars);
+	console.log(id);
 
 	console.log(barOptions);
 
@@ -143,9 +129,10 @@ function animate_bars_vertical(barOptions){
 		WIDTH,
 		HEIGHT,
 		GAP,
-		id
+		id,
+		colors,
 	} = barOptions  
-	console.log(barOptions);
+	
 
 	const bars = document.getElementById(id)
 	
@@ -174,7 +161,7 @@ function animate_bars_vertical(barOptions){
 
 }
 
-export {size, init, start, colors}
+export {size, init, start}
 
 
 

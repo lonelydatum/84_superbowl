@@ -51,6 +51,17 @@ table {
   border-spacing: 0;
 }
 
+#bars, #bars2 {
+  position: relative;
+  z-index: 0;
+}
+
+#bars .bar, #bars2 .bar {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+
 #legalBtn:hover ~ #legalContent {
   opacity: 1;
 }

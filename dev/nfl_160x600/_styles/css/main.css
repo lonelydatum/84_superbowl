@@ -51,6 +51,17 @@ table {
   border-spacing: 0;
 }
 
+#bars, #bars2 {
+  position: relative;
+  z-index: 0;
+}
+
+#bars .bar, #bars2 .bar {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+
 #legalBtn:hover ~ #legalContent {
   opacity: 1;
 }
@@ -279,14 +290,6 @@ canvas, .text, .frame, .outline, img {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  position: relative;
-  z-index: 0;
-}
-
-#bars .bar {
-  padding: 0;
-  margin: 0;
-  position: absolute;
 }
 
 #bars .bar_7 {
@@ -301,14 +304,6 @@ canvas, .text, .frame, .outline, img {
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  position: absolute;
-  position: relative;
-  z-index: 0;
-}
-
-#bars2 .bar {
-  padding: 0;
-  margin: 0;
   position: absolute;
 }
 

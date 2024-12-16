@@ -35,8 +35,6 @@ function init() {
 	return tl;
 }
 
-var colors = ["d4f035", "c4ed37", "b3ea38", "a3e73a", "93e43b", "82e13d", "72de3e", "62da40", "52d741", "41d443", "31d144", "21ce46", "10cb47", "00c849"];
-
 function stag(vh) {
 	return _extends({ duration: .3, opacity: 0, stagger: .1 }, vh);
 }
@@ -59,9 +57,11 @@ function start(barOptions, barOptions2) {
 
 	tl.from('.t2', stag(vh), "end+=.3");
 
-	tl.to(".t2", { duration: .3, y: 0 }, "+=" + READ.t2);
+	// return
 
-	tl.from([".cta", ".legalBtn", ".logos_big"], { duration: .3, opacity: 0 });
+	tl.to(".t2", { duration: .3, y: 0, scale: .5, x: 0, top: 0, left: 0 }, "+=" + READ.t2);
+
+	tl.from([".cta", ".legalBtn", ".logos_big", ".playsmart"], { duration: .3, opacity: 0 });
 
 	tl.add((0, _proline.olg)());
 }
@@ -72,9 +72,11 @@ function animate_bars_horizontal(barOptions) {
 	var HEIGHT = barOptions.HEIGHT;
 	var GAP = barOptions.GAP;
 	var id = barOptions.id;
+	var colors = barOptions.colors;
+	var startColor = barOptions.startColor;
 
 	var bars = document.getElementById(id);
-	console.log(bars);
+	console.log(id);
 
 	console.log(barOptions);
 
@@ -111,8 +113,7 @@ function animate_bars_vertical(barOptions) {
 	var HEIGHT = barOptions.HEIGHT;
 	var GAP = barOptions.GAP;
 	var id = barOptions.id;
-
-	console.log(barOptions);
+	var colors = barOptions.colors;
 
 	var bars = document.getElementById(id);
 
@@ -141,7 +142,6 @@ function animate_bars_vertical(barOptions) {
 exports.size = size;
 exports.init = init;
 exports.start = start;
-exports.colors = colors;
 
 },{"./proline":2}],2:[function(require,module,exports){
 "use strict";

@@ -3,7 +3,7 @@
 #banner{
  width: 300px;
  height: 250px;
- background-color: #00c849;
+ 
 }
 
 
@@ -21,36 +21,17 @@
 	@include pos(0, 193);
 }
 
+.t2{
+	// transform-origin: 50% 50%;
+	// top:-150px;
+	left:-33px;
+	top:5px;
+	@include pos-scale(0, 0, .6);
+}
+
 #bars{
-	@include pos(12, 185);
-	position: relative;
-	z-index: 0;
-	// width: 300px;
-	height: 200px;
-	.bar{
-
-		padding: 0;
-		margin: 0;
-		position: absolute;
-
+	@include pos(0, 130);
+	.bar_9{
+		height: 30px !important;
 	}
-}
-
-.logos{
-	z-index: 1;
-}
-
-.hero{
-	@include pos(12, 82);
-	width: 278px;
-	height: 104px;
-	overflow: hidden;
-	// clip-path: inset(10px 20px 30px 40px);
-	.image{
-		transform-origin: 25% 25%;		
-		transform: scale(.5) translate(-134px, -55px);	
-		// opacity: .5;				
-	}
-
-	// opacity: .3
 }

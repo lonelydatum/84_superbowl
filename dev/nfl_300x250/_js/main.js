@@ -1,20 +1,40 @@
 
 
-import {init, start, colors} from '../../_common/js/common.js'
+import {init, start} from '../../_common/js/common.js'
 
 
 
+
+const colors = [
+	"00c748", 
+	"17cc46", 
+	"2ed145", 
+	"46d442", 
+	"5eda40", 
+	"76de3d", 
+	"8de23b", 
+	"a4e739", 
+	"bbeb37",
+	"d3ef35",	
+	]
 
 const barOptions  ={
-	TOTAL: 12,
-	WIDTH: 278,
-	HEIGHT: 4,
-	GAP: 20,
-	hero: 0.9
+	colors,
+	verHor:"h",
+	TOTAL: 10,
+	WIDTH: 31,
+	HEIGHT: 10,
+	GAP: -35,
+	id:"bars",
+	
+}
+
+const barOptions2  ={
+	...barOptions,
 }
 
 
-start(barOptions)
+start(barOptions, barOptions2)
 
 
 
