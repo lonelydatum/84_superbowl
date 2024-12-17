@@ -21,9 +21,7 @@
 	@include pos(0, 193);
 }
 
-.t2{
-	// transform-origin: 50% 50%;
-	// top:-150px;
+.t2{	
 	left:-33px;
 	top:5px;
 	@include pos-scale(0, 0, .6);

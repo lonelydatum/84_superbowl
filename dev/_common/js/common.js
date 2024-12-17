@@ -30,48 +30,47 @@ function stag(vh){
 	return { duration:.3, opacity:0, stagger: .1, ...vh }
 }
 
+
+function start_landscape(barOptions, barOptions2, vh={x:-size.w}){
+	const tl = init()	
+	tl.add("start")
+	const barTL = barOptions.verHor==="h" ? animate_bars_vertical(barOptions, false) : animate_bars_horizontal(barOptions)
+	
+	
+	tl.add(barTL, "start")	
+	// return
+	tl.from('.t1', stag(vh), "start+=.3");	
+	tl.from('.logos', {opacity:0, duration:.3});	
+	tl.to([".t1", "#bars", ".logos"], {duration:.3, opacity:0}, `+=${READ.t1}`)
+	
+	const barTL2 =barOptions2.verHor==="h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2)
+	tl.add(barTL2, "end")	
+	tl.from('.t2', stag(vh), "end+=.3");		
+	if(universalBanner.size==="728x90"){
+		tl.to(".t2", {duration:.3, opacity:0}, `+=${READ.t2}`)	
+	}else{
+		tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)		
+	}
+	
+	tl.from([".cta", ".legalBtn",  ".logos_big", ".playsmart"], {duration:.3, opacity:0})
+	tl.add(olg())
+}
+
 function start(barOptions, barOptions2, vh={x:-size.w}){
-	
-	
-	const tl = init()
-	
+	const tl = init()	
 	tl.add("start")
 	const barTL = barOptions.verHor==="h" ? animate_bars_vertical(barOptions, false) : animate_bars_horizontal(barOptions)
 
-	tl.add(barTL, "start")
-	
-
-	
-	
-	
-	
+	tl.add(barTL, "start")	
 	tl.from('.t1', stag(vh), "start+=.3");	
 	tl.to([".hero", ".t1", "#bars", ".logos"], {duration:.3, opacity:0}, `+=${READ.t1}`)
 	
-
-	
 	const barTL2 =barOptions2.verHor==="h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2)
-	tl.add(barTL2, "end")
-	
+	tl.add(barTL2, "end")	
 	tl.from('.t2', stag(vh), "end+=.3");		
-	
-	
-
-	
-	
-
-
-
-	
-	
-	
-	tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)
-	
+	tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)	
 	tl.from([".cta", ".legalBtn", ".logos_big", ".playsmart"], {duration:.3, opacity:0})
-
 	tl.add(olg())
-
-
 }
 
 
@@ -85,18 +84,11 @@ function animate_bars_horizontal(barOptions){
 		colors,
 		startColor
 	} = barOptions  
-	
-
-	const bars = document.getElementById(id)
-	console.log(id);
-
-	console.log(barOptions);
-
-	
+	const bars = document.getElementById(id)	
 	for(let i=0;i<TOTAL;i++){
 		const barItem = document.createElement("div")
-		const height = HEIGHT-(i * GAP)
-		
+		const height = HEIGHT-(i * GAP)		
+		console.log(i, colors[i]);
 		TweenLite.set(barItem, {
 			transformOrigin:"0% 100%",
 			className: `bar bar_${i}`,
@@ -104,6 +96,7 @@ function animate_bars_horizontal(barOptions){
 			height,  
 			
 			scale: 1, 
+			x: WIDTH*i,
 			y: HEIGHT-height,
 			backgroundColor:`#${colors[i]}`
 		})
@@ -112,15 +105,11 @@ function animate_bars_horizontal(barOptions){
 	}
 
 	const tl = new TimelineMax()
-
 	tl.from('.bar', {
 		scaleY: 0,
 		stagger: 0.06
 	});
 	return tl
-
-
-
 }
 
 function animate_bars_vertical(barOptions, animate=true){
@@ -132,11 +121,9 @@ function animate_bars_vertical(barOptions, animate=true){
 		id,
 		colors,
 	} = barOptions  
-	
-
-	const bars = document.getElementById(id)
-	
+	const bars = document.getElementById(id)	
 	for(let i=0;i<TOTAL;i++){
+
 		const barItem = document.createElement("div")
 		TweenLite.set(barItem, {
 			className: `bar bar_${i}`,
@@ -163,7 +150,7 @@ function animate_bars_vertical(barOptions, animate=true){
 
 }
 
-export {size, init, start}
+export {size, init, start, start_landscape}
 
 
 
