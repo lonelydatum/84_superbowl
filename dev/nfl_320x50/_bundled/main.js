@@ -55,7 +55,7 @@ function start_landscape(barOptions, barOptions2) {
 	var barTL2 = barOptions2.verHor === "h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2);
 	tl.add(barTL2, "end");
 	tl.from('.t2', stag(vh), "end+=.3");
-	if (universalBanner.size === "728x90") {
+	if (universalBanner.size === "728x90" || universalBanner.size === "320x50") {
 		tl.to(".t2", { duration: .3, opacity: 0 }, "+=" + READ.t2);
 	} else {
 		tl.to(".t2", { duration: .3, y: 0, scale: .5, x: 0, top: 0, left: 0 }, "+=" + READ.t2);
@@ -185,18 +185,30 @@ function olg() {
 exports.olg = olg;
 
 },{}],3:[function(require,module,exports){
-'use strict';
+"use strict";
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
+var colors = ["d3ef35", "c4ec37", "b3ea38", "a2e739", "92e33a", "82e03c", "71de3d", "61da40", "52d641", "41d343", "30d144", "20ce46", "10ca46"];
+
 var barOptions = {
-	TOTAL: 14,
-	WIDTH: 17,
-	HEIGHT: 300,
-	GAP: 3
+	colors: colors,
+	verHor: "v",
+	TOTAL: 12,
+	WIDTH: 20,
+	HEIGHT: 360,
+	GAP: 4,
+	id: "bars"
+
 };
 
-(0, _commonJsCommonJs.start)(barOptions, { y: _commonJsCommonJs.size.h });
+var barOptions2 = _extends({}, barOptions, {
+	id: "bars2"
+});
+
+(0, _commonJsCommonJs.start_landscape)(barOptions, barOptions2, { y: _commonJsCommonJs.size.h });
 
 module.exports = {};
 

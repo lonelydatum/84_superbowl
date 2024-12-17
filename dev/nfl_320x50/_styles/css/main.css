@@ -277,46 +277,35 @@ canvas, .text, .frame, .outline, img {
 }
 
 #bars {
-  -webkit-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+  -webkit-transform: translate(52px, 0px);
+  -ms-transform: translate(52px, 0px);
+  transform: translate(52px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  z-index: 0;
-}
-
-#bars .bar {
-  padding: 0;
-  margin: 0;
 }
 
 #bars .bar_0 {
-  width: 98px !important;
+  width: 71px !important;
+  left: -51px;
 }
 
-.logos {
-  z-index: 1;
-}
-
-.hero {
-  -webkit-transform: translate(12px, 82px);
-  -ms-transform: translate(12px, 82px);
-  transform: translate(12px, 82px);
+#bars2 {
+  -webkit-transform: translate(52px, 0px);
+  -ms-transform: translate(52px, 0px);
+  transform: translate(52px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  width: 278px;
-  height: 104px;
-  overflow: hidden;
+}
+
+#bars2 .bar_0 {
+  width: 71px !important;
+  left: -51px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -46,7 +46,7 @@ function start_landscape(barOptions, barOptions2, vh={x:-size.w}){
 	const barTL2 =barOptions2.verHor==="h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2)
 	tl.add(barTL2, "end")	
 	tl.from('.t2', stag(vh), "end+=.3");		
-	if(universalBanner.size==="728x90"){
+	if(universalBanner.size==="728x90" || universalBanner.size==="320x50"){
 		tl.to(".t2", {duration:.3, opacity:0}, `+=${READ.t2}`)	
 	}else{
 		tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)		
