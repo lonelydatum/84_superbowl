@@ -275,9 +275,9 @@ canvas, .text, .frame, .outline, img {
 }
 
 #bars {
-  -webkit-transform: translate(290px, 0px);
-  -ms-transform: translate(290px, 0px);
-  transform: translate(290px, 0px);
+  -webkit-transform: translate(0px, 115px);
+  -ms-transform: translate(0px, 115px);
+  transform: translate(0px, 115px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -285,9 +285,8 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-#bars .bar_0 {
-  width: 342px !important;
-  left: -289px;
+#bars .bar_9 {
+  height: 50px !important;
 }
 
 #bars2 {

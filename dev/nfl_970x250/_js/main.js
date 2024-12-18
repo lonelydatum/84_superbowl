@@ -1,6 +1,6 @@
 
 
-import {init, start_landscape, size} from '../../_common/js/common.js'
+import {init, start, size} from '../../_common/js/common.js'
 
 
 
@@ -22,19 +22,30 @@ const colors = [
 	]
 
 const barOptions  ={
-	colors,
-	verHor:"v",
-	TOTAL: 12,
-	WIDTH: 52,
-	HEIGHT: 250,
-	GAP: 18,
+	colors:[
+	"00c748", 
+	"17cc46", 
+	"2ed145", 
+	"46d442", 
+	"5eda40", 
+	"76de3d", 
+	"8de23b", 
+	"a4e739", 
+	"bbeb37",
+	"d3ef35",	
+	],
+	verHor:"h",
+	TOTAL: 10,
+	WIDTH: 109,
+	HEIGHT: 11,
+	GAP: -98,
 	id:"bars",
 	
 }
 
 const barOptions2  ={
-	...barOptions,
-	// colors:[...colors].reverse(),
+	colors,
+	verHor:"v",
 	TOTAL: 11,
 	HEIGHT: 500,
 	GAP: 46,
@@ -43,7 +54,7 @@ const barOptions2  ={
 }
 
 
-start_landscape(barOptions, barOptions2, {y:size.h})
+start(barOptions, barOptions2, {y:50})
 
 
 

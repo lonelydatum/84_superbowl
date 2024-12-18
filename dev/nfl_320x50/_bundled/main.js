@@ -114,7 +114,7 @@ function animate_bars_horizontal(barOptions) {
 	}
 
 	var tl = new TimelineMax();
-	tl.from('.bar', {
+	tl.from("#" + id + " .bar", {
 		scaleY: 0,
 		stagger: 0.06
 	});

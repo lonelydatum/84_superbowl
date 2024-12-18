@@ -241,26 +241,15 @@ canvas, .text, .frame, .outline, img {
 
 #banner {
   width: 970px;
-  height: 70px;
-}
-
-.legalBtn {
-  -webkit-transform: translate(244px, 0px) scale(0.5, 0.5);
-  -ms-transform: translate(244px, 0px) scale(0.5, 0.5);
-  transform: translate(244px, 0px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
+  height: 250px;
 }
 
 #olg {
-  width: 117px;
-  height: 69px;
-  -webkit-transform: translate(-2px, 13px);
-  -ms-transform: translate(-2px, 13px);
-  transform: translate(-2px, 13px);
+  width: 158px;
+  height: 81px;
+  -webkit-transform: translate(-2px, 169px);
+  -ms-transform: translate(-2px, 169px);
+  transform: translate(-2px, 169px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -269,58 +258,52 @@ canvas, .text, .frame, .outline, img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(910px, 0px);
-  -ms-transform: translate(910px, 0px);
-  transform: translate(910px, 0px);
+  -webkit-transform: translate(888px, 0px);
+  -ms-transform: translate(888px, 0px);
+  transform: translate(888px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  width: 80px;
+  width: 140px;
+  height: 50px;
+}
+
+.t2 {
+  top: 52px;
 }
 
 #bars {
-  -webkit-transform: translate(0px, -17px);
-  -ms-transform: translate(0px, -17px);
-  transform: translate(0px, -17px);
+  -webkit-transform: translate(290px, 0px);
+  -ms-transform: translate(290px, 0px);
+  transform: translate(290px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  z-index: 0;
-}
-
-#bars .bar {
-  padding: 0;
-  margin: 0;
 }
 
 #bars .bar_0 {
-  width: 318px !important;
+  width: 342px !important;
+  left: -289px;
 }
 
-.logos {
-  z-index: 1;
-}
-
-.hero {
-  -webkit-transform: translate(12px, 82px);
-  -ms-transform: translate(12px, 82px);
-  transform: translate(12px, 82px);
+#bars2 {
+  -webkit-transform: translate(43px, -235px);
+  -ms-transform: translate(43px, -235px);
+  transform: translate(43px, -235px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-  width: 278px;
-  height: 104px;
-  overflow: hidden;
+}
+
+#bars2 .bar_0 {
+  width: 342px !important;
+  left: -275px;
 }
 
 /*# sourceMappingURL=main.css.map */

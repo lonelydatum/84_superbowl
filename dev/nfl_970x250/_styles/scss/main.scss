@@ -27,10 +27,9 @@
 }
 
 #bars{
-	@include pos(290, 0);
-	.bar_0{
-		width: 342px !important;
-		left: -289px;
+	@include pos(0, 115);
+	.bar_9{
+		height: 50px !important;
 	}
 }
 
