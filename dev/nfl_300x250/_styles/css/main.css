@@ -270,19 +270,6 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-.t2 {
-  left: -33px;
-  top: 5px;
-  -webkit-transform: translate(0px, 0px) scale(0.6, 0.6);
-  -ms-transform: translate(0px, 0px) scale(0.6, 0.6);
-  transform: translate(0px, 0px) scale(0.6, 0.6);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
 #bars {
   -webkit-transform: translate(0px, 130px);
   -ms-transform: translate(0px, 130px);

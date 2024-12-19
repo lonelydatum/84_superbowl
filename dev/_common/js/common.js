@@ -57,6 +57,7 @@ function start_landscape(barOptions, barOptions2, vh={x:-size.w}){
 }
 
 function start(barOptions, barOptions2, vh={x:-size.w}){
+	console.log('sldkfj');
 	const tl = init()	
 	tl.add("start")
 	const barTL = barOptions.verHor==="h" ? animate_bars_vertical(barOptions, false) : animate_bars_horizontal(barOptions)
@@ -68,8 +69,16 @@ function start(barOptions, barOptions2, vh={x:-size.w}){
 	const barTL2 =barOptions2.verHor==="h" ? animate_bars_vertical(barOptions2) : animate_bars_horizontal(barOptions2)
 	tl.add(barTL2, "end")	
 	tl.from('.t2', stag(vh), "end+=.3");		
-	tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)	
-	tl.from([".cta", ".legalBtn", ".logos_big", ".playsmart"], {duration:.3, opacity:0})
+
+	if(universalBanner.size==="970x250"){
+		tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)	
+		tl.from([".cta", ".legalBtn", ".playsmart", ".logos_big"], {duration:.3, opacity:0}, "+=.3")
+	}else{
+		tl.from('.logos_big', {opacity:0});		
+		tl.from([".cta", ".legalBtn", ".playsmart"], {duration:.3, opacity:0}, "+=.3")
+	}
+	
+	
 	tl.add(olg())
 }
 
