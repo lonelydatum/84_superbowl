@@ -74,8 +74,8 @@ function start(barOptions, barOptions2, vh={x:-size.w}){
 		tl.to(".t2", {duration:.3, y:0, scale:.5, x:0, top:0, left:0}, `+=${READ.t2}`)	
 		tl.from([".cta", ".legalBtn", ".playsmart", ".logos_big"], {duration:.3, opacity:0}, "+=.3")
 	}else{
-		tl.from('.logos_big', {opacity:0});		
-		tl.from([".cta", ".legalBtn", ".playsmart"], {duration:.3, opacity:0}, "+=.3")
+		tl.from('.logos_big', {opacity:0}, "-=.1");		
+		tl.from([".cta", ".legalBtn", ".playsmart"], {duration:.3, opacity:0}, "+=.4")
 	}
 	
 	
